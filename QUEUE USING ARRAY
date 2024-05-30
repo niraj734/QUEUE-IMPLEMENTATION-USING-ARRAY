@@ -1,0 +1,77 @@
+import java.util.Scanner;
+class queue
+{
+	public static final int capacity=5;
+	public static int front=-1;
+	public static int rear=-1;
+	int arr[]=new int[capacity];
+	public void ENQUEUE()
+	{
+		if(rear==capacity-1)
+		{
+			System.out.println("QUEUE OVEFRLOW");
+			
+		}
+		else
+		{
+			Scanner sc=new Scanner(System.in);
+			System.out.println("ENTER THE DATA TO BE ENQUEUED");
+			rear=rear+1;
+			arr[rear]=sc.nextInt();
+			if(front==-1)
+			{
+				front=0;
+			}
+		}
+	}
+	public void dequeue()
+	{
+		if(front==-1)
+		{
+			System.out.println("QUEUE UNDERFLOW");
+		}
+		else
+		{
+			System.out.println("THE DELETED ELEMENT IS"+arr[front]);
+			if(rear==front)
+			{
+				front=-1;
+				rear=-1;
+				
+			}
+			else
+			{
+				front=front+1;
+			}
+			
+			
+		}
+	
+	}
+	public void display()
+	{
+		System.out.println("THE QUEUE AFTER PERFORMING ALL THE OPERATIONS");
+		for(int i=front;i<=rear;i++)
+		{
+			System.out.print(arr[i]+" ");
+		}
+	}
+}
+public class IMPLEMENTATION_OF_QUEUE_USING$ARRAY 
+{
+
+	public static void main(String[] args) 
+	{
+		queue qq=new queue();
+		qq.ENQUEUE();
+		qq.ENQUEUE();
+		qq.ENQUEUE();
+		qq.ENQUEUE();
+		qq.dequeue();
+		qq.dequeue();
+		qq.display();
+		
+
+	}
+
+}
